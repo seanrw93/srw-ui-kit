@@ -1,0 +1,48 @@
+// =============================================================
+// TOKENS — verbatim from srw-dev/src/styles/tokens/variables.css
+// =============================================================
+
+:root {
+  // Dark surface — nav + hero
+  --dark-bg:          #0e0c0a;
+  --dark-text:        #f5f0e8;
+  --dark-text-muted:  rgba(245, 240, 232, 0.45);
+
+  // Light surface — all content sections
+  --light-bg:         #ffffff;
+  --light-text:       #1a1a1a;
+  --light-body:       #4a4a4a;
+  --light-muted:      #9a9489;
+  --card-bg:          #f5f2ee;
+  --card-border:      #e8e2d8;
+  --divider:          #e8e2d8;
+
+  // Accent — carries through both halves
+  --accent:           #c8b89a;
+  --accent-hover:     #b8a88a;
+
+  // Geometry
+  --nav-height:       64px;
+  --radius:           3px;
+  --radius-md:        8px;
+  --max-w:            1240px;
+
+  // Typography
+  --font-body:        'Inter', sans-serif;
+  --font-display:     'Space Grotesk', sans-serif;
+}
+
+// Dark mode — inverts surfaces, preserves accent
+[data-theme="dark"] {
+  --light-bg:         #0e0c0a;
+  --light-text:       #f5f0e8;
+  --light-body:       rgba(245, 240, 232, 0.65);
+  --light-muted:      rgba(245, 240, 232, 0.38);
+  --card-bg:          #1c1916;
+  --card-border:      rgba(245, 240, 232, 0.10);
+  --divider:          rgba(245, 240, 232, 0.08);
+
+  --dark-bg:          #0e0c0a;
+  --dark-text:        #f5f0e8;
+  --dark-text-muted:  rgba(245, 240, 232, 0.45);
+}

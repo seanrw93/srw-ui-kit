@@ -1,0 +1,60 @@
+@use '../../../../styles/tokens' as *;
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  &__label {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--light-text);
+    letter-spacing: 0.02em;
+  }
+
+  &__control {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--light-text);
+    background: var(--light-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+
+    &::placeholder {
+      color: var(--light-muted);
+    }
+
+    &:focus {
+      border-color: var(--accent);
+    }
+
+    &:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      background: var(--card-bg);
+    }
+  }
+
+  &__helper {
+    font-size: 0.75rem;
+    color: var(--light-muted);
+  }
+
+  &__error {
+    font-size: 0.75rem;
+    color: #b71c1c;
+  }
+
+  &--error .input-field__control {
+    border-color: #e57373;
+
+    &:focus {
+      border-color: #b71c1c;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<div class="input-field" [class.input-field--error]="error" [class.input-field--disabled]="disabled">
+  <label *ngIf="label" class="input-field__label">{{ label }}</label>
+  <input
+    class="input-field__control"
+    [(ngModel)]="value"
+    [disabled]="disabled"
+    [placeholder]="placeholder"
+    [attr.aria-invalid]="!!error"
+  />
+  <span *ngIf="error" class="input-field__error">{{ error }}</span>
+  <span *ngIf="!error && helperText" class="input-field__helper">{{ helperText }}</span>
+</div>

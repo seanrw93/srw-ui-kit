@@ -1,0 +1,26 @@
+<div
+  *ngIf="modal.isOpen()"
+  class="modal-backdrop"
+  (click)="onBackdropClick($event)"
+  role="dialog"
+  aria-modal="true"
+>
+  <div class="modal" [class.modal--danger]="modal.config().danger">
+    <header class="modal__header">
+      <h2 class="modal__title">{{ modal.config().title }}</h2>
+      <button class="modal__close" (click)="modal.close()" aria-label="Close">✕</button>
+    </header>
+    <div class="modal__body">{{ modal.config().body }}</div>
+    <footer class="modal__footer">
+      <button class="btn btn--outline btn--md" (click)="modal.close()">Cancel</button>
+      <button
+        class="btn btn--md"
+        [class.btn--primary]="!modal.config().danger"
+        [class.btn--danger]="modal.config().danger"
+        (click)="modal.close()"
+      >
+        {{ modal.config().confirmLabel || 'Confirm' }}
+      </button>
+    </footer>
+  </div>
+</div>

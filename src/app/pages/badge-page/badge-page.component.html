@@ -1,0 +1,26 @@
+<div class="page">
+  <h1 class="page__title">Badge</h1>
+  <p class="page__desc">Six semantic variants. Optional leading dot for status indication.</p>
+
+  <section class="demo-block">
+    <span class="demo-block__label">Variants</span>
+    <div class="demo-block__content demo-block__content--row">
+      <srw-badge variant="neutral">Neutral</srw-badge>
+      <srw-badge variant="success">Success</srw-badge>
+      <srw-badge variant="warning">Warning</srw-badge>
+      <srw-badge variant="error">Error</srw-badge>
+      <srw-badge variant="info">Info</srw-badge>
+      <srw-badge variant="dark">Dark</srw-badge>
+    </div>
+  </section>
+
+  <section class="demo-block">
+    <span class="demo-block__label">With Dot</span>
+    <div class="demo-block__content demo-block__content--row">
+      <srw-badge variant="success" [dot]="true">Active</srw-badge>
+      <srw-badge variant="warning" [dot]="true">Pending</srw-badge>
+      <srw-badge variant="error" [dot]="true">Failed</srw-badge>
+      <srw-badge variant="neutral" [dot]="true">Offline</srw-badge>
+    </div>
+  </section>
+</div>

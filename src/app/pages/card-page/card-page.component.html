@@ -1,0 +1,42 @@
+<div class="page">
+  <h1 class="page__title">Card</h1>
+  <p class="page__desc">Composable container with optional image slot via <code>ng-content</code>.</p>
+
+  <section class="demo-block">
+    <span class="demo-block__label">Without Image</span>
+    <div class="demo-block__content">
+      <div class="card-grid">
+        <srw-card>
+          <p class="card-label">Section label</p>
+          <h3 class="card-heading">Card title goes here</h3>
+          <p class="card-body">Supporting text that describes the card content. Keep it concise and useful.</p>
+        </srw-card>
+        <srw-card>
+          <p class="card-label">Section label</p>
+          <h3 class="card-heading">Another card</h3>
+          <p class="card-body">A second card to show the layout in context. Consistent height via grid.</p>
+        </srw-card>
+      </div>
+    </div>
+  </section>
+
+  <section class="demo-block">
+    <span class="demo-block__label">With Image Slot</span>
+    <div class="demo-block__content">
+      <div class="card-grid">
+        <srw-card [hasImage]="true">
+          <div slot="image" class="card-img-placeholder"></div>
+          <p class="card-label">Image card</p>
+          <h3 class="card-heading">Card with image</h3>
+          <p class="card-body">The image slot renders above the body via projected content.</p>
+        </srw-card>
+        <srw-card [hasImage]="true">
+          <div slot="image" class="card-img-placeholder card-img-placeholder--alt"></div>
+          <p class="card-label">Image card</p>
+          <h3 class="card-heading">Second image card</h3>
+          <p class="card-body">Projected image content via <code>[slot="image"]</code>.</p>
+        </srw-card>
+      </div>
+    </div>
+  </section>
+</div>

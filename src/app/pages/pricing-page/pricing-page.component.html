@@ -1,0 +1,17 @@
+<div class="page">
+  <h1 class="page__title">Pricing Card</h1>
+  <p class="page__desc">Three-column grid with a popular card variant. Cards bounce on hover. The popular card flips to a dark surface. Features use a green checkmark and a frosted-glass price badge.</p>
+
+  <section class="demo-block">
+    <span class="demo-block__label">Three-tier pricing</span>
+    <div class="demo-block__content">
+      <div class="pricing-demo-grid">
+        @for (plan of plans; track plan.name; let i = $index) {
+          <div srwReveal [revealDelay]="i * 70">
+            <srw-pricing-card [plan]="plan" />
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>

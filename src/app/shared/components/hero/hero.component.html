@@ -1,0 +1,37 @@
+<div class="srw-hero-outer">
+  <div class="srw-hero-orb srw-hero-orb--1" aria-hidden="true"></div>
+  <div class="srw-hero-orb srw-hero-orb--2" aria-hidden="true"></div>
+  <div class="srw-hero-orb srw-hero-orb--3" aria-hidden="true"></div>
+
+  <div class="srw-hero-layout">
+    <div class="srw-hero" srwReveal>
+      <span class="srw-hero__eyebrow">Available for projects &middot; Remote &amp; On-site</span>
+      <h1>Your online presence,<br /><em>without the headache.</em></h1>
+      <p class="srw-hero__subtitle">
+        Brochure sites and e-commerce stores for small businesses.
+        Fast, professional, easy to manage.
+      </p>
+      <div class="srw-hero__ctas">
+        <a href="#contact" class="btn btn--primary btn--md">Work with me</a>
+      </div>
+    </div>
+
+    <div class="srw-hero-grid">
+      <div class="srw-hero-grid__col srw-hero-grid__col--up">
+        @for (c of [gridColors[0], gridColors[3]]; track c) {
+          <div class="srw-hero-grid__item" [style.background]="c"></div>
+        }
+      </div>
+      <div class="srw-hero-grid__col srw-hero-grid__col--down">
+        @for (c of [gridColors[1], gridColors[4]]; track c) {
+          <div class="srw-hero-grid__item" [style.background]="c"></div>
+        }
+      </div>
+      <div class="srw-hero-grid__col srw-hero-grid__col--up">
+        @for (c of [gridColors[2], gridColors[5]]; track c) {
+          <div class="srw-hero-grid__item" [style.background]="c"></div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

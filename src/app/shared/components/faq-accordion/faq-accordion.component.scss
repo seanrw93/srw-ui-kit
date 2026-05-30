@@ -1,0 +1,58 @@
+@use '../../../../styles/tokens' as *;
+
+.faq-accordion {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+
+  &__item {
+    border-bottom: 1px solid var(--divider);
+  }
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    padding: 20px 0;
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--light-text);
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &:hover { color: var(--accent); }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    color: var(--light-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, transform 0.3s;
+  }
+
+  &__item--open &__icon {
+    color: var(--accent);
+    transform: rotate(45deg);
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  &__content-inner {
+    padding-bottom: 20px;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: var(--light-body);
+  }
+}

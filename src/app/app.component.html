@@ -1,0 +1,61 @@
+<div class="shell">
+  <aside class="sidebar">
+    <div class="sidebar__brand">
+      <span class="sidebar__logo">srw-dev</span>
+      <span class="sidebar__subtitle">UI Kit &middot; v1.0</span>
+    </div>
+
+    <nav class="sidebar__nav" aria-label="Components">
+      @for (cat of nav; track cat.label) {
+        <div class="sidebar__category">
+          <button
+            class="sidebar__category-toggle"
+            (click)="toggleCategory(cat.label)"
+            [attr.aria-expanded]="isCategoryOpen(cat.label)"
+          >
+            <span>{{ cat.label }}</span>
+            <svg
+              class="sidebar__category-chevron"
+              [class.sidebar__category-chevron--open]="isCategoryOpen(cat.label)"
+              width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"
+            >
+              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div
+            class="sidebar__items"
+            [style.maxHeight]="isCategoryOpen(cat.label) ? (cat.items.length * 38) + 'px' : '0'"
+          >
+            @for (item of cat.items; track item.path) {
+              <a
+                class="sidebar__link"
+                [routerLink]="item.path"
+                routerLinkActive="active"
+              >
+                {{ item.label }}
+              </a>
+            }
+          </div>
+        </div>
+      }
+    </nav>
+
+    <div class="sidebar__footer">
+      <button
+        class="theme-toggle"
+        (click)="themeService.toggle()"
+        [attr.aria-label]="isDark() ? 'Switch to light mode' : 'Switch to dark mode'"
+      >
+        <span class="theme-toggle__icon" aria-hidden="true">{{ isDark() ? '&#9728;' : '&#9681;' }}</span>
+        <span class="theme-toggle__label">{{ isDark() ? 'Light mode' : 'Dark mode' }}</span>
+      </button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <router-outlet />
+  </main>
+</div>
+
+<srw-modal />

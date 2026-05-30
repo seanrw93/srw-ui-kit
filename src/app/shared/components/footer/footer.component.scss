@@ -1,0 +1,56 @@
+@use '../../../../styles/tokens' as *;
+
+.srw-footer {
+  background: var(--dark-bg);
+  border-top: 1px solid rgba(245,240,232,.06);
+  padding: 44px 5%;
+
+  &__inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  &__brand {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: var(--dark-text);
+    margin-bottom: 4px;
+  }
+
+  &__tagline {
+    font-size: 0.77rem;
+    color: rgba(245,240,232,.38);
+    a {
+      color: rgba(245,240,232,.5);
+      text-decoration: none;
+      transition: color .2s;
+      &:hover { color: var(--accent); }
+    }
+  }
+
+  &__copy {
+    font-size: 0.69rem;
+    color: rgba(245,240,232,.22);
+    margin-top: 4px;
+  }
+
+  &__links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+
+    a {
+      font-size: 0.77rem;
+      color: rgba(245,240,232,.32);
+      text-decoration: none;
+      transition: color .2s;
+      &:hover { color: rgba(245,240,232,.75); }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+<nav class="srw-nav" aria-label="Primary navigation">
+  <div class="srw-nav__inner">
+    <a class="srw-nav__logo" href="#">
+      <span>srw</span>dev
+    </a>
+
+    <ul class="srw-nav__links">
+      <li
+        class="srw-nav__item--services"
+        (mouseenter)="onServicesEnter()"
+        (mouseleave)="onServicesLeave()"
+      >
+        <button class="srw-nav__services-trigger">
+          Services
+          <svg class="srw-nav__chevron" [class.srw-nav__chevron--open]="servicesOpen()" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="srw-nav__submenu" [class.srw-nav__submenu--open]="servicesOpen()">
+          @for (link of serviceLinks; track link.label) {
+            <a href="#" class="srw-nav__submenu-item">{{ link.label }}</a>
+          }
+        </div>
+      </li>
+      @for (link of navLinks; track link.label) {
+        <li><a [href]="link.href">{{ link.label }}</a></li>
+      }
+    </ul>
+
+    <div class="srw-nav__actions">
+      <span class="srw-nav__badge">&#9679; Available for projects</span>
+      <a href="#contact" class="btn btn--primary btn--sm">Work with me</a>
+    </div>
+
+    <button
+      class="srw-nav__hamburger"
+      [class.srw-nav__hamburger--open]="mobileOpen()"
+      (click)="toggleMobile()"
+      [attr.aria-expanded]="mobileOpen()"
+      aria-label="Toggle menu"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="srw-nav__mobile" [class.srw-nav__mobile--open]="mobileOpen()">
+  <button class="srw-nav__mobile-services-btn" (click)="toggleMobileServices()">
+    Services
+    <svg class="srw-nav__chevron" [class.srw-nav__chevron--open]="mobileServicesOpen()" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+      <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <div class="srw-nav__mobile-submenu" [style.maxHeight]="mobileServicesOpen() ? '400px' : '0'">
+    @for (link of serviceLinks; track link.label) {
+      <a href="#" class="srw-nav__mobile-submenu-item" (click)="closeMobile()">{{ link.label }}</a>
+    }
+  </div>
+  @for (link of navLinks; track link.label) {
+    <a [href]="link.href" (click)="closeMobile()">{{ link.label }}</a>
+  }
+  <a href="#contact" (click)="closeMobile()" style="color: var(--accent)">Work with me &rarr;</a>
+</div>

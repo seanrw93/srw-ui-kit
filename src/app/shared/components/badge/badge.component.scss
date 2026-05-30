@@ -1,0 +1,59 @@
+@use '../../../../styles/tokens' as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 999px;
+  padding: 3px 10px;
+  border: 1px solid transparent;
+
+  &--neutral {
+    background: var(--card-bg);
+    color: var(--light-body);
+    border-color: var(--card-border);
+  }
+
+  &--success {
+    background: #e6f4ea;
+    color: #1e7e34;
+    border-color: #b2dfbf;
+  }
+
+  &--warning {
+    background: #fff8e1;
+    color: #8a5e00;
+    border-color: #ffe082;
+  }
+
+  &--error {
+    background: #fdecea;
+    color: #b71c1c;
+    border-color: #f5c6cb;
+  }
+
+  &--info {
+    background: #e3f2fd;
+    color: #0d47a1;
+    border-color: #90caf9;
+  }
+
+  &--dark {
+    background: var(--dark-bg);
+    color: var(--dark-text);
+    border-color: rgba(245, 240, 232, 0.12);
+  }
+}
+
+.badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}

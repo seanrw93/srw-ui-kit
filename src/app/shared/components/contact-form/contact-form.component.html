@@ -1,0 +1,58 @@
+<div class="contact-inner">
+  <div class="contact-info">
+    <span class="section-label">Contact</span>
+    <h2 class="section-title">Let's work together</h2>
+    <p>Describe your project or requirement. I'll get back to you within 24h.</p>
+
+    <div class="contact-links">
+      @for (link of contactLinks; track link.label) {
+        <a [href]="link.href" class="contact-link" [target]="link.href.startsWith('http') ? '_blank' : null">
+          <div class="contact-link-icon" aria-hidden="true">{{ link.icon }}</div>
+          {{ link.label }}
+        </a>
+      }
+    </div>
+  </div>
+
+  <div class="contact-form-wrap">
+    @if (status() !== 'success') {
+      <form (ngSubmit)="submit($event)">
+        <div class="form-group">
+          <label for="cf-name">Name</label>
+          <input id="cf-name" type="text" [(ngModel)]="name" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label for="cf-email">Email</label>
+          <input id="cf-email" type="email" [(ngModel)]="email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="cf-type">Type of enquiry</label>
+          <select id="cf-type" [(ngModel)]="reqtype" name="reqtype" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="new-site">New website</option>
+            <option value="ecommerce">E-commerce store</option>
+            <option value="performance">Performance optimisation</option>
+            <option value="freelance">Freelance / contract</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" [(ngModel)]="message" name="message" placeholder="Describe your project or need..." required></textarea>
+        </div>
+        @if (status() === 'error') {
+          <p class="form-error">Something went wrong. Please try again or email us directly.</p>
+        }
+        <button type="submit" class="btn btn--outline btn--md form-submit" [disabled]="status() === 'sending'">
+          {{ status() === 'sending' ? 'Sending…' : 'Send message' }}
+        </button>
+      </form>
+    } @else {
+      <div class="form-success">
+        <span class="form-success__icon">&#10003;</span>
+        <p>Message sent. I'll reply within 24h.</p>
+        <button class="btn btn--ghost btn--sm" (click)="reset()">Send another</button>
+      </div>
+    }
+  </div>
+</div>

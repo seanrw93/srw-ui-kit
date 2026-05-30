@@ -1,0 +1,19 @@
+<div class="pricing-card" [class.pricing-card--popular]="plan.popular">
+  @if (plan.popular) {
+    <span class="pricing-card__badge">&#11088; Most popular</span>
+  }
+  <div class="pricing-card__name">{{ plan.name }}</div>
+  <div class="pricing-card__price-wrap">
+    <span class="pricing-card__price">{{ plan.price }}</span>
+  </div>
+  <p class="pricing-card__note">{{ plan.note }}</p>
+  <ul class="pricing-card__features">
+    @for (f of plan.features; track f) {
+      <li>
+        <span class="pricing-card__check" aria-hidden="true">&#10003;</span>
+        {{ f }}
+      </li>
+    }
+  </ul>
+  <a href="#contact" class="btn btn--outline btn--md pricing-card__cta">{{ plan.cta }}</a>
+</div>

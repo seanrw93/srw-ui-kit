@@ -1,0 +1,32 @@
+<div class="page">
+  <h1 class="page__title">Button</h1>
+  <p class="page__desc">Four variants × three sizes. Supports <code>disabled</code> and <code>loading</code> states.</p>
+
+  <section class="demo-block">
+    <span class="demo-block__label">Variants</span>
+    <div class="demo-block__content demo-block__content--row">
+      <srw-button variant="primary">Primary</srw-button>
+      <srw-button variant="secondary">Secondary</srw-button>
+      <srw-button variant="outline">Outline</srw-button>
+      <srw-button variant="ghost">Ghost</srw-button>
+    </div>
+  </section>
+
+  <section class="demo-block">
+    <span class="demo-block__label">Sizes</span>
+    <div class="demo-block__content demo-block__content--row demo-block__content--align-end">
+      <srw-button variant="primary" size="sm">Small</srw-button>
+      <srw-button variant="primary" size="md">Medium</srw-button>
+      <srw-button variant="primary" size="lg">Large</srw-button>
+    </div>
+  </section>
+
+  <section class="demo-block">
+    <span class="demo-block__label">States</span>
+    <div class="demo-block__content demo-block__content--row">
+      <srw-button variant="primary" [disabled]="true">Disabled</srw-button>
+      <srw-button variant="primary" [loading]="true">Loading</srw-button>
+      <srw-button variant="outline" [disabled]="true">Outline Disabled</srw-button>
+    </div>
+  </section>
+</div>

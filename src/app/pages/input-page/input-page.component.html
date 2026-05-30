@@ -1,0 +1,33 @@
+<div class="page">
+  <h1 class="page__title">Input</h1>
+  <p class="page__desc">Text input with label, helper text, error, and disabled states.</p>
+
+  <section class="demo-block">
+    <span class="demo-block__label">Default</span>
+    <div class="demo-block__content">
+      <div class="input-grid">
+        <srw-input label="Full name" placeholder="Sean Roennau-Wergen" helperText="Enter your full name as it appears on your ID." />
+        <srw-input label="Email address" placeholder="hello@example.com" helperText="We'll never share your email." />
+      </div>
+    </div>
+  </section>
+
+  <section class="demo-block">
+    <span class="demo-block__label">Error state</span>
+    <div class="demo-block__content">
+      <div class="input-grid">
+        <srw-input label="Email address" placeholder="hello@example.com" error="Please enter a valid email address." />
+        <srw-input label="Password" placeholder="••••••••" error="Password must be at least 8 characters." />
+      </div>
+    </div>
+  </section>
+
+  <section class="demo-block">
+    <span class="demo-block__label">Disabled</span>
+    <div class="demo-block__content">
+      <div class="input-grid">
+        <srw-input label="Read-only field" placeholder="Cannot edit this" [disabled]="true" helperText="This field is disabled." />
+      </div>
+    </div>
+  </section>
+</div>

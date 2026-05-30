@@ -1,0 +1,8 @@
+<div class="card" [class.card--with-image]="hasImage">
+  <div *ngIf="hasImage" class="card__image">
+    <ng-content select="[slot=image]" />
+  </div>
+  <div class="card__body">
+    <ng-content />
+  </div>
+</div>

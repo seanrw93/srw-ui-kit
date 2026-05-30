@@ -1,0 +1,24 @@
+.demo-block__content--flush {
+  padding: 0 !important;
+  overflow: hidden;
+  background: #0e0c0a !important;
+  border-radius: 8px;
+}
+
+.token-list { display: flex; flex-direction: column; gap: 10px; }
+.token-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  font-size: 0.82rem;
+  code {
+    font-size: 0.75rem;
+    background: var(--card-border);
+    padding: 2px 7px;
+    border-radius: 3px;
+    color: var(--accent-hover);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  span { color: var(--light-body); }
+}
