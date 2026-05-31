@@ -1,5 +1,107 @@
 @use '../styles/tokens' as *;
 
+// ── Mobile topbar (hidden on desktop) ────────────────────
+
+.topbar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  height: 56px;
+  background: color-mix(in srgb, var(--dark-bg) 90%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(245, 240, 232, 0.07);
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar__logo {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  letter-spacing: -0.02em;
+}
+
+.topbar__logo-sub {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--dark-text-muted);
+  margin-left: 4px;
+}
+
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.topbar__theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: background 0.15s;
+
+  &:hover { background: rgba(245, 240, 232, 0.06); }
+}
+
+.topbar__hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  background: none;
+  border: none;
+  border-radius: var(--radius);
+  transition: background 0.15s;
+
+  &:hover { background: rgba(245, 240, 232, 0.06); }
+
+  span {
+    display: block;
+    width: 20px;
+    height: 1.5px;
+    background: rgba(245, 240, 232, 0.7);
+    border-radius: 1px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  &--open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  &--open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  &--open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+}
+
+// ── Backdrop (mobile only) ────────────────────────────────
+
+.nav-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 149;
+  background: rgba(14, 12, 10, 0.55);
+  animation: backdrop-in 0.2s ease;
+}
+
+@keyframes backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+// ── Shell ─────────────────────────────────────────────────
+
 .shell {
   display: flex;
   min-height: 100vh;
@@ -18,6 +120,7 @@
   top: 0;
   height: 100vh;
   overflow-y: auto;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .sidebar__brand {
@@ -125,7 +228,7 @@
   }
 }
 
-// ── Footer / theme toggle ────────────────────────────────
+// ── Sidebar footer / theme toggle ────────────────────────
 
 .sidebar__footer {
   padding: 14px 12px;
@@ -171,4 +274,40 @@
   min-width: 0;
   background: var(--light-bg);
   overflow-y: auto;
+}
+
+// ── Responsive ───────────────────────────────────────────
+
+@media (max-width: 768px) {
+  // Show mobile topbar
+  .topbar { display: flex; }
+
+  // Show backdrop when drawer open
+  .nav-backdrop { display: block; }
+
+  // Sidebar becomes a fixed drawer from the left
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 150;
+    transform: translateX(-100%);
+    box-shadow: 4px 0 32px rgba(0, 0, 0, 0.4);
+
+    &--open { transform: translateX(0); }
+  }
+
+  // Push main down below topbar; no left offset (sidebar is overlay)
+  .shell {
+    flex-direction: column;
+    padding-top: 56px;
+  }
+
+  .main {
+    min-height: calc(100vh - 56px);
+  }
+
+  // Hide desktop theme toggle — topbar has its own
+  .sidebar__footer { display: none; }
 }

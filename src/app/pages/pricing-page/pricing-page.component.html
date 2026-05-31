@@ -1,10 +1,10 @@
-<div class="page">
+<div class="page pricing-page">
   <h1 class="page__title">Pricing Card</h1>
-  <p class="page__desc">Three-column grid with a popular card variant. Cards bounce on hover. The popular card flips to a dark surface. Features use a green checkmark and a frosted-glass price badge.</p>
+  <p class="page__desc">Three-column grid. The popular card uses a dark surface and bounces on hover. Features get a green checkmark; price sits in a frosted-glass badge.</p>
 
   <section class="demo-block">
     <span class="demo-block__label">Three-tier pricing</span>
-    <div class="demo-block__content">
+    <div class="demo-block__content demo-block__content--pricing">
       <div class="pricing-demo-grid">
         @for (plan of plans; track plan.name; let i = $index) {
           <div srwReveal [revealDelay]="i * 70">

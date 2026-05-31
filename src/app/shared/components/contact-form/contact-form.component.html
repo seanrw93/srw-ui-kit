@@ -2,10 +2,10 @@
   <div class="contact-info">
     <span class="section-label">Contact</span>
     <h2 class="section-title">Let's work together</h2>
-    <p>Describe your project or requirement. I'll get back to you within 24h.</p>
+    <p>Tell me about your project. I'll get back to you within 24h.</p>
 
     <div class="contact-links">
-      @for (link of contactLinks; track link.label) {
+      @for (link of links; track link.label) {
         <a [href]="link.href" class="contact-link" [target]="link.href.startsWith('http') ? '_blank' : null">
           <div class="contact-link-icon" aria-hidden="true">{{ link.icon }}</div>
           {{ link.label }}
@@ -41,7 +41,7 @@
           <textarea id="cf-message" [(ngModel)]="message" name="message" placeholder="Describe your project or need..." required></textarea>
         </div>
         @if (status() === 'error') {
-          <p class="form-error">Something went wrong. Please try again or email us directly.</p>
+          <p class="form-error">Something went wrong. Try again or email directly.</p>
         }
         <button type="submit" class="btn btn--outline btn--md form-submit" [disabled]="status() === 'sending'">
           {{ status() === 'sending' ? 'Sending…' : 'Send message' }}
@@ -50,7 +50,7 @@
     } @else {
       <div class="form-success">
         <span class="form-success__icon">&#10003;</span>
-        <p>Message sent. I'll reply within 24h.</p>
+        <p>Sent. I'll reply within 24h.</p>
         <button class="btn btn--ghost btn--sm" (click)="reset()">Send another</button>
       </div>
     }

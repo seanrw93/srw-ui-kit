@@ -57,8 +57,8 @@ export class AppComponent {
   readonly isDark = computed(() => this.themeService.isDark());
   readonly nav = NAV;
 
-  // All categories open by default except 'Overview' which has no toggle arrow needed
   readonly openCategories = signal<Set<string>>(new Set(NAV.map(c => c.label)));
+  readonly mobileNavOpen = signal(false);
 
   toggleCategory(label: string): void {
     this.openCategories.update(set => {
@@ -70,5 +70,13 @@ export class AppComponent {
 
   isCategoryOpen(label: string): boolean {
     return this.openCategories().has(label);
+  }
+
+  toggleMobileNav(): void {
+    this.mobileNavOpen.update(v => !v);
+  }
+
+  closeMobileNav(): void {
+    this.mobileNavOpen.set(false);
   }
 }

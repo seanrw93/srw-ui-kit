@@ -10,10 +10,10 @@ import { ModalService } from '../../services/modal.service';
   styleUrl: './modal.component.scss',
 })
 export class ModalComponent {
-  readonly modal = inject(ModalService);
+  modal = inject(ModalService);
 
-  onBackdropClick(event: MouseEvent): void {
-    if ((event.target as HTMLElement).classList.contains('modal-backdrop')) {
+  onBackdropClick(e: MouseEvent) {
+    if ((e.target as HTMLElement).classList.contains('modal-backdrop')) {
       this.modal.close();
     }
   }

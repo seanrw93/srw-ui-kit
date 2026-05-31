@@ -15,7 +15,7 @@ export class ModalPageComponent {
   openDefault(): void {
     this.modal.open({
       title: 'Confirm action',
-      body: 'Are you sure you want to proceed? This cannot be undone.',
+      body: 'Are you sure you want to proceed?',
       confirmLabel: 'Confirm',
     });
   }
@@ -23,7 +23,7 @@ export class ModalPageComponent {
   openDanger(): void {
     this.modal.open({
       title: 'Delete item',
-      body: 'This will permanently delete the item. This action cannot be undone.',
+      body: 'This will permanently delete the item.',
       confirmLabel: 'Delete',
       danger: true,
     });

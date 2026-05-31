@@ -9,15 +9,15 @@ export interface ModalConfig {
 
 @Injectable({ providedIn: 'root' })
 export class ModalService {
-  readonly isOpen = signal(false);
-  readonly config = signal<ModalConfig>({ title: '', body: '' });
+  isOpen = signal(false);
+  config = signal<ModalConfig>({ title: '', body: '' });
 
-  open(cfg: ModalConfig): void {
+  open(cfg: ModalConfig) {
     this.config.set(cfg);
     this.isOpen.set(true);
   }
 
-  close(): void {
+  close() {
     this.isOpen.set(false);
   }
 }

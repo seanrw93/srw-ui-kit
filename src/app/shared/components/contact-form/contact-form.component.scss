@@ -5,6 +5,11 @@
   grid-template-columns: 1fr 1fr;
   gap: 64px;
   align-items: start;
+
+  @media (max-width: 720px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 
 .contact-info {

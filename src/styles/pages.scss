@@ -125,3 +125,38 @@
   flex-direction: column;
   gap: 12px;
 }
+
+// ── Responsive ───────────────────────────────────────────
+
+@media (max-width: 768px) {
+  .page {
+    padding: 28px 20px 48px;
+    max-width: 100%;
+
+    &__desc { margin-bottom: 32px; }
+  }
+
+  .demo-block {
+    margin-bottom: 28px;
+
+    &__content {
+      padding: 20px 18px;
+
+      &--row { gap: 10px; }
+    }
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .input-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .page { padding: 20px 16px 40px; }
+
+  .demo-block__content { padding: 16px; }
+}

@@ -1,8 +1,23 @@
+// Break the page max-width constraint so cards have room to breathe
+.pricing-page {
+  max-width: 100%;
+}
+
+// Override demo-block content padding for the full-width pricing layout
+.demo-block__content--pricing {
+  padding: 32px;
+}
+
 .pricing-demo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  gap: 16px;
   align-items: start;
 
   > div { display: flex; flex-direction: column; }
+
+  @media (max-width: 860px) {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
 }

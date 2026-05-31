@@ -211,3 +211,14 @@
     &:hover { color: var(--accent); }
   }
 }
+
+// ── Responsive ───────────────────────────────────────────
+
+@media (max-width: 720px) {
+  .srw-nav {
+    &__links,
+    &__actions { display: none; }
+
+    &__hamburger { display: flex; }
+  }
+}

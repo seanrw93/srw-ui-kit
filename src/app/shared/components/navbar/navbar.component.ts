@@ -1,22 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-const SERVICE_LINKS = [
-  { label: 'Web Design' },
-  { label: 'E-commerce' },
-  { label: 'Performance & Speed' },
-  { label: 'Technical SEO' },
-  { label: 'Maintenance & Support' },
-];
-
-const NAV_LINKS = [
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'About', href: '#about' },
-  { label: 'Case Studies', href: '#cases' },
-  { label: 'Contact', href: '#contact' },
-  { label: 'FAQ', href: '#faq' },
-];
-
 @Component({
   selector: 'srw-navbar',
   standalone: true,
@@ -25,34 +9,40 @@ const NAV_LINKS = [
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
-  readonly serviceLinks = SERVICE_LINKS;
-  readonly navLinks = NAV_LINKS;
+  services = ['Web Design', 'E-commerce', 'Performance & Speed', 'Technical SEO', 'Maintenance & Support'];
+  navLinks = [
+    { label: 'Pricing', href: '#pricing' },
+    { label: 'About', href: '#about' },
+    { label: 'Case Studies', href: '#cases' },
+    { label: 'Contact', href: '#contact' },
+    { label: 'FAQ', href: '#faq' },
+  ];
 
-  readonly mobileOpen = signal(false);
-  readonly servicesOpen = signal(false);
-  readonly mobileServicesOpen = signal(false);
+  mobileOpen = signal(false);
+  servicesOpen = signal(false);
+  mobileServicesOpen = signal(false);
 
   private closeTimer: ReturnType<typeof setTimeout> | null = null;
 
-  onServicesEnter(): void {
+  onServicesEnter() {
     if (this.closeTimer) clearTimeout(this.closeTimer);
     this.servicesOpen.set(true);
   }
 
-  onServicesLeave(): void {
+  onServicesLeave() {
     this.closeTimer = setTimeout(() => this.servicesOpen.set(false), 150);
   }
 
-  toggleMobile(): void {
+  toggleMobile() {
     this.mobileOpen.update(v => !v);
     if (!this.mobileOpen()) this.mobileServicesOpen.set(false);
   }
 
-  toggleMobileServices(): void {
+  toggleMobileServices() {
     this.mobileServicesOpen.update(v => !v);
   }
 
-  closeMobile(): void {
+  closeMobile() {
     this.mobileOpen.set(false);
     this.mobileServicesOpen.set(false);
   }
