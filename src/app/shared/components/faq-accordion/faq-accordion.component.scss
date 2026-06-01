@@ -35,18 +35,31 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: color 0.2s, transform 0.3s;
+    transition: color 0.2s, transform 0.3s ease;
+  }
+
+  &__icon-v {
+    transform-origin: 7px 7px;
+    transition: transform 0.3s ease;
   }
 
   &__item--open &__icon {
     color: var(--accent);
-    transform: rotate(45deg);
+  }
+
+  &__item--open &__icon-v {
+    transform: rotate(90deg);
   }
 
   &__content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.35s ease;
+
+    &--open {
+      max-height: 160px;
+      transition: max-height 0.4s ease;
+    }
   }
 
   &__content-inner {
