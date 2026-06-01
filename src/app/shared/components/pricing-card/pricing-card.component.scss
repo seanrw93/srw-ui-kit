@@ -48,11 +48,6 @@
     .pricing-card__note,
     .pricing-card__features li { opacity: 0.65; }
 
-    .btn--outline {
-      color: var(--dark-text);
-      border-color: rgba(245,240,232,.3);
-      &:hover { color: var(--accent); border-color: var(--accent); }
-    }
   }
 
   &__badge {

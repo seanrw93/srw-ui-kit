@@ -10,6 +10,7 @@ const SECTIONS: Section[] = [
   {
     category: 'Primitives',
     items: [
+      { label: 'Link', path: '/link', desc: 'Anchor element with the full button variant set' },
       { label: 'Button', path: '/button', desc: '4 variants, 3 sizes, loading & disabled states' },
       { label: 'Badge', path: '/badge', desc: '6 semantic variants with optional status dot' },
       { label: 'Input', path: '/input', desc: 'Label, helper, error, and disabled states' },

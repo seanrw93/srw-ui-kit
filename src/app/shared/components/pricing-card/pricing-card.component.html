@@ -15,5 +15,8 @@
       </li>
     }
   </ul>
-  <a href="#contact" class="btn btn--outline btn--md pricing-card__cta">{{ plan.cta }}</a>
+  <a href="#contact" class="btn btn--md pricing-card__cta"
+    [class.btn--secondary]="!plan.popular"
+    [class.btn--accent-dark]="plan.popular"
+  >{{ plan.cta }}</a>
 </div>

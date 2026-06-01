@@ -1,0 +1,44 @@
+<div class="page">
+  <h1 class="page__title">Link</h1>
+  <p class="page__desc">Four variants plus dark surface counterparts, three sizes. Supports <code>disabled</code> and <code>external</code> states.</p>
+
+  <section class="demo-block demo-block--split">
+    <span class="demo-block__label">Variants</span>
+    <div class="demo-block__content demo-block__content--row">
+      <srw-a-link variant="primary">Primary</srw-a-link>
+      <srw-a-link variant="secondary">Secondary</srw-a-link>
+      <srw-a-link variant="outline">Outline</srw-a-link>
+      <srw-a-link variant="ghost">Ghost</srw-a-link>
+    </div>
+    <div class="demo-block__content demo-block__content--row demo-block__content--dark">
+      <srw-a-link variant="accent-dark">Accent Dark</srw-a-link>
+    </div>
+  </section>
+
+  <section class="demo-block demo-block--split">
+    <span class="demo-block__label">Sizes</span>
+    <div class="demo-block__content demo-block__content--row demo-block__content--align-end">
+      <srw-a-link variant="primary" size="sm">Small</srw-a-link>
+      <srw-a-link variant="primary" size="md">Medium</srw-a-link>
+      <srw-a-link variant="primary" size="lg">Large</srw-a-link>
+    </div>
+    <div class="demo-block__content demo-block__content--row demo-block__content--align-end demo-block__content--dark">
+      <srw-a-link variant="accent-dark" size="sm">Small</srw-a-link>
+      <srw-a-link variant="accent-dark" size="md">Medium</srw-a-link>
+      <srw-a-link variant="accent-dark" size="lg">Large</srw-a-link>
+    </div>
+  </section>
+
+  <section class="demo-block demo-block--split">
+    <span class="demo-block__label">States</span>
+    <div class="demo-block__content demo-block__content--row">
+      <srw-a-link variant="primary" [disabled]="true">Disabled</srw-a-link>
+      <srw-a-link variant="primary" [external]="true">External</srw-a-link>
+      <srw-a-link variant="outline" [disabled]="true">Outline Disabled</srw-a-link>
+    </div>
+    <div class="demo-block__content demo-block__content--row demo-block__content--dark">
+      <srw-a-link variant="accent-dark" [disabled]="true">Disabled</srw-a-link>
+      <srw-a-link variant="accent-dark" [external]="true">External</srw-a-link>
+    </div>
+  </section>
+</div>

@@ -14,6 +14,7 @@ const NAV: NavCategory[] = [
   {
     label: 'Primitives',
     items: [
+      { label: 'Link', path: '/link' },
       { label: 'Button', path: '/button' },
       { label: 'Badge', path: '/badge' },
       { label: 'Input', path: '/input' },

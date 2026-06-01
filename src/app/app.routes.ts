@@ -8,6 +8,10 @@ export const routes: Routes = [
   },
   // Primitives
   {
+    path: 'link',
+    loadComponent: () => import('./pages/link-page/link-page.component').then(m => m.LinkPageComponent),
+  },
+  {
     path: 'button',
     loadComponent: () => import('./pages/button-page/button-page.component').then(m => m.ButtonPageComponent),
   },

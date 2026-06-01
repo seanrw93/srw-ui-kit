@@ -51,6 +51,13 @@
     border-radius: var(--radius-md);
     padding: 28px 32px;
 
+    &--dark {
+      background: var(--dark-bg);
+      border-color: rgba(245, 240, 232, 0.1);
+      border-top: none;
+      border-radius: 0 0 var(--radius-md) var(--radius-md);
+    }
+
     &--row {
       display: flex;
       flex-wrap: wrap;
@@ -61,6 +68,11 @@
     &--align-end {
       align-items: flex-end;
     }
+  }
+
+  &--split &__content:first-of-type {
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    border-bottom: none;
   }
 }
 
