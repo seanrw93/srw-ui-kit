@@ -1,19 +1,65 @@
-# srw-dev UI Kit
+# SRW UI Kit
 
-A component library extracted directly from the [srw-dev](https://srwdev.fr) production site. Every design token, animation, and interaction is sourced verbatim from the live codebase — not approximated.
+An Angular component library pulled directly from the srw-dev production site. The showcase app lets you browse components in full-page context; Storybook covers isolated states and args-driven testing for primitives.
 
 Built with **Angular 19**, standalone components, and Angular Signals throughout. No NgModules, no RxJS.
 
----
+## Tech stack
+
+- Angular 19 + TypeScript
+- SCSS (with design tokens)
+- Angular Router (lazy-loaded per page)
+- Storybook v8
 
 ## Getting started
 
 ```bash
 npm install
-ng serve
+npm run start      # showcase app at http://localhost:4200
+npm run storybook  # Storybook at http://localhost:6006
 ```
 
-Open `http://localhost:4200` in your browser. The app redirects to the Home page, which lists every component by category.
+## Scripts
+
+| Script | Description |
+|--------|-------------|
+| `npm run start` | Start the showcase app |
+| `npm run storybook` | Start Storybook |
+| `npm run build` | Build the showcase app |
+| `npm run build-storybook` | Build Storybook for static deployment |
+
+## Components
+
+| Component | Category | Storybook |
+|-----------|----------|-----------|
+| `Alert` | Primitive | Yes |
+| `ALink` | Primitive | Yes |
+| `Badge` | Primitive | Yes |
+| `Button` | Primitive | Yes |
+| `Input` | Primitive | Yes |
+| `Card` | Container | Yes |
+| `Modal` | Container | Yes |
+| `PricingCard` | Container | Yes |
+| `ContactForm` | Pattern | Showcase only |
+| `FaqAccordion` | Pattern | Yes |
+| `Footer` | Layout | Yes |
+| `Hero` | Layout | Yes |
+| `Navbar` | Layout | Yes |
+| `Reveal` | Utility | Yes |
+
+## Project structure
+
+```
+src/
+├── stories/        # Storybook stories
+├── styles/         # Global styles and design tokens
+└── app/
+    ├── shared/
+    │   ├── components/   # Reusable UI components
+    │   ├── directives/   # Angular directives (srwReveal)
+    │   └── services/     # Angular services (Theme, Modal)
+    └── pages/            # Full-page showcase demos
+```
 
 ---
 
