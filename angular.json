@@ -123,6 +123,7 @@
           "options": {
             "configDir": ".storybook",
             "browserTarget": "srw-ui-kit:build",
+            "tsConfig": "tsconfig.storybook.json",
             "compodoc": false,
             "port": 6006
           }
@@ -132,6 +133,7 @@
           "options": {
             "configDir": ".storybook",
             "browserTarget": "srw-ui-kit:build",
+            "tsConfig": "tsconfig.storybook.json",
             "compodoc": false,
             "outputDir": "storybook-static"
           }
