@@ -7,9 +7,8 @@ const config: StorybookConfig = {
   ],
   addons: [
     '@chromatic-com/storybook',
-    '@storybook/addon-controls',
+    '@storybook/addon-essentials',
     '@storybook/addon-a11y',
-    '@storybook/addon-docs',
   ],
   framework: {
     name: '@storybook/angular',
