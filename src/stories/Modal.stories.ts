@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { expect, userEvent, within } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/angular';
 import { moduleMetadata } from '@storybook/angular';
 import { ModalComponent } from '../app/shared/components/modal/modal.component';
@@ -61,6 +62,7 @@ class BothTrigger {
 
 const meta: Meta = {
   title: 'Containers/Modal',
+  tags: ['autodocs'],
   decorators: [
     moduleMetadata({
       imports: [DefaultTrigger, DangerTrigger, BothTrigger],
@@ -75,12 +77,28 @@ export const Default: Story = {
   render: () => ({
     template: `<story-modal-default />`,
   }),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button', { name: /open modal/i });
+    await userEvent.click(button);
+    await expect(canvas.getByRole('dialog')).toBeInTheDocument();
+    const closeButton = canvas.getByRole('button', { name: /close/i });
+    await userEvent.click(closeButton);
+    await expect(canvas.queryByRole('dialog')).not.toBeInTheDocument();
+  },
 };
 
 export const Danger: Story = {
   render: () => ({
     template: `<story-modal-danger />`,
   }),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button', { name: /open danger modal/i });
+    await userEvent.click(button);
+    await expect(canvas.getByRole('dialog')).toBeInTheDocument();
+    await expect(canvas.getByText('Delete item')).toBeInTheDocument();
+  },
 };
 
 export const BothVariants: Story = {
