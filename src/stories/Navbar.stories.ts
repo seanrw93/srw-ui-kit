@@ -4,6 +4,7 @@ import { NavbarComponent } from '../app/shared/components/navbar/navbar.componen
 const meta: Meta<NavbarComponent> = {
   title: 'Layout/Navbar',
   component: NavbarComponent,
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

@@ -4,6 +4,7 @@ import { HeroComponent } from '../app/shared/components/hero/hero.component';
 const meta: Meta<HeroComponent> = {
   title: 'Layout/Hero',
   component: HeroComponent,
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

@@ -4,6 +4,7 @@ import { FooterComponent } from '../app/shared/components/footer/footer.componen
 const meta: Meta<FooterComponent> = {
   title: 'Layout/Footer',
   component: FooterComponent,
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
