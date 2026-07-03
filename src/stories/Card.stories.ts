@@ -4,6 +4,7 @@ import { CardComponent } from '../app/shared/components/card/card.component';
 const meta: Meta<CardComponent> = {
   title: 'Containers/Card',
   component: CardComponent,
+  tags: ['autodocs'],
   args: {
     hasImage: false,
   },

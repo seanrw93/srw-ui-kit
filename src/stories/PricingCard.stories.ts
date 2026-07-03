@@ -29,6 +29,7 @@ const scalePlan: PricingPlan = {
 const meta: Meta<PricingCardComponent> = {
   title: 'Containers/PricingCard',
   component: PricingCardComponent,
+  tags: ['autodocs'],
   args: {
     plan: starterPlan,
   },
