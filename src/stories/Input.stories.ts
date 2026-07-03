@@ -1,9 +1,11 @@
+import { expect, userEvent, within } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/angular';
 import { InputComponent } from '../app/shared/components/input/input.component';
 
 const meta: Meta<InputComponent> = {
   title: 'Primitives/Input',
   component: InputComponent,
+  tags: ['autodocs'],
   args: {
     label: 'Label',
     placeholder: 'Placeholder text',
@@ -16,7 +18,15 @@ export default meta;
 
 type Story = StoryObj<InputComponent>;
 
-export const Playground: Story = {};
+export const Playground: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByRole('textbox');
+    await userEvent.click(input);
+    await userEvent.type(input, 'Hello, World!');
+    await expect(input).toHaveValue('Hello, World!');
+  },
+};
 
 export const WithHelper: Story = {
   args: {
