@@ -4,6 +4,7 @@ import { BadgeComponent } from '../app/shared/components/badge/badge.component';
 const meta: Meta<BadgeComponent> = {
   title: 'Primitives/Badge',
   component: BadgeComponent,
+  tags: ['autodocs'],
   args: {
     variant: 'neutral',
     dot: false,

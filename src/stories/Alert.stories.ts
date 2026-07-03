@@ -4,6 +4,7 @@ import { AlertComponent } from '../app/shared/components/alert/alert.component';
 const meta: Meta<AlertComponent> = {
   title: 'Primitives/Alert',
   component: AlertComponent,
+  tags: ['autodocs'],
   args: {
     variant: 'info',
   },

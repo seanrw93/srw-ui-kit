@@ -4,6 +4,7 @@ import { ALinkComponent } from '../app/shared/components/a-link/a-link.component
 const meta: Meta<ALinkComponent> = {
   title: 'Primitives/ALink',
   component: ALinkComponent,
+  tags: ['autodocs'],
   args: {
     variant: 'primary',
     size: 'md',

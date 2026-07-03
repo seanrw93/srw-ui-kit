@@ -4,6 +4,7 @@ import { ButtonComponent } from '../app/shared/components/button/button.componen
 const meta: Meta<ButtonComponent> = {
   title: 'Primitives/Button',
   component: ButtonComponent,
+  tags: ['autodocs'],
   args: {
     variant: 'primary',
     size: 'md',
