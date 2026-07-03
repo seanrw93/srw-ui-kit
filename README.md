@@ -4,6 +4,10 @@ An Angular component library pulled directly from the srw-dev production site. T
 
 Built with **Angular 19**, standalone components, and Angular Signals throughout. No NgModules, no RxJS.
 
+Based on portfolio site : [srw:dev](https://srwdev.fr)
+
+[Storybook site](https://srw-ui-kit-ng-storybook.vercel.app)
+
 ## Tech stack
 
 - Angular 19 + TypeScript
