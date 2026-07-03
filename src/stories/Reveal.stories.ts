@@ -4,6 +4,7 @@ import { RevealDirective } from '../app/shared/directives/reveal.directive';
 
 const meta: Meta = {
   title: 'Utility/Reveal',
+  tags: ['autodocs'],
   decorators: [
     moduleMetadata({
       imports: [RevealDirective],
